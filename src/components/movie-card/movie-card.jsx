@@ -24,11 +24,11 @@ MovieCard.propTypes = {
     movie: PropTypes.shape({
         Title: PropTypes.string.isRequired,
         Description: PropTypes.string.isRequired,
-        Genre: PropTypes({
+        Genre: PropTypes.shape({
             Name: PropTypes.string.isRequired,
             Description: PropTypes.string.isRequired
         }),
-        Director: PropTypes({
+        Director: PropTypes.shape({
             Name: PropTypes.string.isRequired,
             Bio: PropTypes.string.isRequired
         }),

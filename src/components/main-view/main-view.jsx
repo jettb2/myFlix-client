@@ -5,16 +5,6 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 
-// export class MainView extends React.Component {
-//     constructor() {
-//         super();
-//         this.state = {
-//             movies: [],
-//             selectedMovies: null
-//         };
-//     }
-// }
-
 export class MainView extends React.Component {
     constructor() {
         super();
@@ -25,7 +15,8 @@ export class MainView extends React.Component {
                 // { _id: 2, Title: 'The Shawshank Redemption', Description: 'desc2...', ImagePath: '...' },
                 // { _id: 3, Title: 'Gladiator', Description: 'desc3...', ImagePath: '...' }
             ],
-            selectedMovies: null
+            selectedMovies: null,
+            selectedUser: null
         }
     }
 
@@ -54,7 +45,7 @@ export class MainView extends React.Component {
     }
 
     render() {
-        const { movies, selectedMovie } = this.state;
+        const { movies, selectedMovie, selectedUser } = this.state;
         if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
         if (movies.length === 0) return <div className="main-view">The list is empty!</div>;
