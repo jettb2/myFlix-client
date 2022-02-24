@@ -9,7 +9,7 @@ export class MovieCard extends React.Component {
         // const { movie } = this.props;
         return (
             <Card>
-                <Card.Img variant="top" src={movie.ImagePath} />
+                <Card.Img variant="top" src={movie.ImagePath} crossOrigin="anonymous" />
                 <Card.Body>
                     <Card.Title>{movie.Title}</Card.Title>
                     <Card.Text>{movie.Description}</Card.Text>
@@ -32,7 +32,7 @@ MovieCard.propTypes = {
             Name: PropTypes.string.isRequired,
             Bio: PropTypes.string.isRequired
         }),
-        ImagePath: PropTypes.string.isRequired
+        ImagePath: PropTypes.string
     }).isRequired,
     onMovieClick: PropTypes.func.isRequired
 };
