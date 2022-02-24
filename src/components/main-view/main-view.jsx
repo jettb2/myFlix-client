@@ -16,12 +16,12 @@ export class MainView extends React.Component {
                 // { _id: 3, Title: 'Gladiator', Description: 'desc3...', ImagePath: '...' }
             ],
             selectedMovies: null,
-            selectedUser: null
+            user: null
         }
     }
 
     componentDidMount() {
-        axios.get('https://jett-flix-2.heroku.com/movies')
+        axios.get('https://jett-flix-2.herokuapp.com/movies')
             .then(response => {
                 this.setState({
                     movies: response.data
@@ -45,7 +45,7 @@ export class MainView extends React.Component {
     }
 
     render() {
-        const { movies, selectedMovie, selectedUser } = this.state;
+        const { movies, selectedMovie, user } = this.state;
         if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
         if (movies.length === 0) return <div className="main-view">The list is empty!</div>;
