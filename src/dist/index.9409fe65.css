@@ -1,4 +1,9 @@
 .my-flix {
   color: steelblue;
 }
+
+img {
+  max-width: 100px;
+  max-height: 200px;
+}
 /*# sourceMappingURL=index.9409fe65.css.map */
