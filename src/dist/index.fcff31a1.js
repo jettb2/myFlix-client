@@ -22923,7 +22923,7 @@ class MainView extends _reactDefault.default.Component {
         };
     }
     getMovies(token) {
-        _axiosDefault.default.get('https://boiling-coast-93300.herokuapp.com/movies', {
+        _axiosDefault.default.get('jett-flix-2.herokuapp.com/movies', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
