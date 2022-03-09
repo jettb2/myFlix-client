@@ -6,7 +6,7 @@ import './profile-view.scss';
 import axios from 'axios';
 
 function FavoriteMovies({ favoriteMoviesList }) {
-    const removeFav = { id } => {
+    const removeFav = (id) => {
         let token = localStorage.getItem('token');
         let url = `/${localStorage.getItem('user')}/movies/${id}`;
         axios.delete(url, {

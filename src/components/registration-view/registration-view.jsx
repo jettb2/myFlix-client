@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from "prop-types";
 
 export function RegistrationView(props) {
@@ -12,24 +12,24 @@ export function RegistrationView(props) {
         e.preventDefault();
         console.log(username, password, email, Birthday);
         /* Send a request to the server for authentication */
-        /* then call props on registored user(username) */
-        props.onRegistration(username);
-    };
-
-    axios.post('https://jett-flix-2.herokuapp.com/users', {
-        Username: username,
-        Password: password,
-        Email: email,
-        Birthday: birthday
-    })
-        .then(response => {
-            const data = response.data;
-            console.log(data);
-            window.open('/', '_self'); // the second argument '_self' is necessary so that the page will open in the current tab
+        axios.post('https://jett-flix-2.herokuapp.com/users', {
+            Username: username,
+            Password: password,
+            Email: email,
+            Birthday: Birthday
         })
-        .catch(e => {
-            console.log('error registering the user')
-        });
+            .then(response => {
+                const data = response.data;
+                console.log(data);
+                props.onRegistration(username);
+                window.open('/', '_self'); // the second argument '_self' is necessary so that the page will open in the current tab
+            })
+            .catch(e => {
+                console.log('error registering the user')
+            });
+
+        /* then call props on registored user(username) */
+    };
 
     return (
         <form>

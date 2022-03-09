@@ -22,6 +22,10 @@ const favoriteMoviesList = movies.filter((movies) => {
     return user.favoriteMovies.includes(movies._id);
 })
 
+// const getUser () => {
+
+// }
+
 useEffect(() => {
     let isMounted = true;
     isMounted && getUser();
@@ -54,7 +58,6 @@ return (
 
     </Container>
 );
-}
 
 
 
