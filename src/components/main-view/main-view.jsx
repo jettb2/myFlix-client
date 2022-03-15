@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
+import { MovieView } from '../movie-view/movie-view';
+import { GenreView } from '../genre-view/genre-view';
 
 import { MovieCard } from '../movie-card/movie-card';
 import Row from 'react-bootstrap/Row';
@@ -88,9 +90,20 @@ export class MainView extends React.Component {
                         }} />
 
                         <Route path="/register" render={() => {
-                            // if (user) return <Redirect to="/" />
+                            if (user) return <Redirect to="/" />
                             return <Col>
                                 <RegistrationView onRegistration={username => this.onRegistration(username)} />
+                            </Col>
+                        }} />
+
+                        <Route exact path="/movies/:movieId" render={({ match, history }) => {
+                            if (!user) return
+                            <Col>
+                                <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                            </Col>
+                            if (movies.length === 0) return <div className="main-view" />;
+                            return <Col md={8}>
+                                <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
                             </Col>
                         }} />
 
