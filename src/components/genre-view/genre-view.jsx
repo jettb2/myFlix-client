@@ -9,47 +9,53 @@ export class GenreView extends React.Component {
 
     render() {
         const { genre, onBackClick, movies } = this.props;
-
+        console.log('Movies', movies)
         return (
-            <Container fluid>
-                <Card>
-                    <Card.Body>
-                        <Card.Title>Genre</Card.Title>
-                        <Card.Text>
-                            <span className="label">Name: </span>
-                            <span className="value">{genre.Name}</span>
-                        </Card.Text>
-                        <Card.Text>
-                            <span className="label">Description: </span>
-                            <span className="value">{genre.Description}</span>
-                        </Card.Text>
+            <div>
 
-                        <Button variant="outline-light" onClick={() => { onBackClick(); }}>Back</Button>
-                    </Card.Body>
-                </Card>
-                <Row>
-                    {movies.map(movie => (
-                        <Card className="favorite-movie card-content" key={movie._id} >
-                            <Card.Img
-                                className="fav-poster"
-                                variant="top"
-                                src={movie.ImagePath} />
-                            <Card.Body style={{ backgroundColor: "black" }}>
-                                <Card.Title className="movie_title">
-                                    {movie.Title}
-                                </Card.Title>
-                            </Card.Body>
-                        </Card>
-                    ))}
-                </Row>
-            </Container>
-        );
+            </div>
+        )
+
+        // return (
+        //     <Container fluid>
+        //         <Card>
+        //             <Card.Body>
+        //                 <Card.Title>Genre</Card.Title>
+        //                 <Card.Text>
+        //                     <span className="label">Name: </span>
+        //                     <span className="value">{genre.Name}</span>
+        //                 </Card.Text>
+        //                 <Card.Text>
+        //                     <span className="label">Description: </span>
+        //                     <span className="value">{genre.Description}</span>
+        //                 </Card.Text>
+
+        //                 <Button variant="outline-light" onClick={() => { onBackClick(); }}>Back</Button>
+        //             </Card.Body>
+        //         </Card>
+        //         <Row>
+        //             {movies.map(movie => (
+        //                 <Card className="favorite-movie card-content" key={movie._id} >
+        //                     <Card.Img
+        //                         className="fav-poster"
+        //                         variant="top"
+        //                         src={movie.ImagePath} />
+        //                     <Card.Body style={{ backgroundColor: "black" }}>
+        //                         <Card.Title className="movie_title">
+        //                             {movie.Title}
+        //                         </Card.Title>
+        //                     </Card.Body>
+        //                 </Card>
+        //             ))}
+        //         </Row>
+        //     </Container>
+        // );
     }
 }
 
-GenreView.proptypes = {
-    genre: PropTypes.shape({
-        Name: PropTypes.string.isRequired,
-        Description: PropTypes.string.isRequired,
-    }).isRequired,
-};
+// GenreView.proptypes = {
+//     genre: PropTypes.shape({
+//         Name: PropTypes.string.isRequired,
+//         Description: PropTypes.string.isRequired,
+//     }).isRequired,
+// };

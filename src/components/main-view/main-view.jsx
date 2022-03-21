@@ -58,7 +58,6 @@ export class MainView extends React.Component {
         });
     }
 
-
     componentDidMount() {
         let accessToken = localStorage.getItem('token');
         if (accessToken !== null) {
@@ -106,6 +105,19 @@ export class MainView extends React.Component {
                                 <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
                             </Col>
                         }} />
+
+                        <Route exact path="/genres/:name" render={({ match }) => {
+                            if (!user) return
+                            <Col>
+                                <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                            </Col>
+                            if (movies.length === 0) return <div className="main-view" />;
+                            console.log(match.params.name, movies)
+                            return <Col md={8}>
+                                <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} />
+                            </Col>
+                        }
+                        } />
 
                     </Switch>
                 </Router >
