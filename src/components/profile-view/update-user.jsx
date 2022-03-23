@@ -15,4 +15,4 @@ function UpdateUser({ handleSubmit, handleUpdate }) {
     )
 }
 
-export default UpdatedUser
+export default UpdateUser
