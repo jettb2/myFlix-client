@@ -9,6 +9,7 @@ import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
 import { ProfileView } from '../profile-view/profile-view';
+import { NavbarView } from '../navbar/navbar-view';
 
 import { MovieCard } from '../movie-card/movie-card';
 import Row from 'react-bootstrap/Row';
@@ -76,6 +77,7 @@ export class MainView extends React.Component {
         return (
             <div className="main-view">
                 <Router>
+                    <NavbarView user={user} />
                     <Switch>
 
                         <Route exact path="/" render={() => {
