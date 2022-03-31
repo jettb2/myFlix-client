@@ -142,10 +142,10 @@ export class MainView extends React.Component {
                             </Col>
                         }} />
 
-                        <Route path={`/profile${user}`} render={({ history }) => {
+                        <Route path={`/profile/:Username`} render={({ history, match }) => {
                             if (!user) return <Redirect to="/profile" />
                             return <Col md={8}>
-                                <ProfileView movies={this.state.movies} />
+                                <ProfileView movies={this.state.movies} history={history} match={match} />
                             </Col>
                         }} />
 

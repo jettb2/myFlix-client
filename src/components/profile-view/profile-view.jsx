@@ -41,6 +41,7 @@ export class ProfileView extends React.Component {
                 headers: { Authorization: `Bearer ${token}` },
             })
             .then((response) => {
+                console.log(response)
                 this.setState({
                     Username: response.data.Username,
                     Password: response.data.Password,

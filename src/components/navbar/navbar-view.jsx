@@ -20,7 +20,7 @@ export function NavbarView({ user }) {
             return false;
         }
     };
-
+    console.log("user", user)
     return (
         <Navbar className="main-nav" sticky="top" expand="lg" variant="dark">
             <Container fluid>
@@ -29,7 +29,7 @@ export function NavbarView({ user }) {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ml-auto">
                         {isAuth() && (
-                            <Nav.Link href="/profile">{user}</Nav.Link>
+                            <Nav.Link href={"#"}><Link to={`/profile/${user}`}> {`${user}`} </Link> </Nav.Link>
                         )}
                         {isAuth() && (
                             <Button variant="link" onClick={() => {
@@ -39,10 +39,12 @@ export function NavbarView({ user }) {
                         {!isAuth() && (
                             <Nav.Link href="/">Login</Nav.Link>
                         )}
-                        {!isAuth() && (
+                        {/* {!isAuth() && (
                             <Nav.Link href="/register">Register</Nav.Link>
+                        )} */}
+                        {!isAuth() && (
+                            <Nav.Link href="/">Home</Nav.Link>
                         )}
-
                     </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -9,7 +9,6 @@ export class GenreView extends React.Component {
 
     render() {
         const { genre, onBackClick, movies } = this.props;
-        console.log('Movies', movies)
 
         return (
             <Container fluid>
@@ -48,9 +47,9 @@ export class GenreView extends React.Component {
     }
 }
 
-// GenreView.proptypes = {
-//     genre: PropTypes.shape({
-//         Name: PropTypes.string.isRequired,
-//         Description: PropTypes.string.isRequired,
-//     }).isRequired,
-// };
+GenreView.proptypes = {
+    genre: PropTypes.shape({
+        Name: PropTypes.string.isRequired,
+        Description: PropTypes.string.isRequired,
+    }).isRequired,
+};
