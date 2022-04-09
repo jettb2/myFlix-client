@@ -16,30 +16,29 @@ export class MovieCard extends React.Component {
                     <Card.Title>{movie.Title}</Card.Title>
                     <Card.Text>{movie.Description}</Card.Text>
                     <Link to={`/movies/${movie._id}`}>
-                        <Button variant="link">Open</Button>
+                        <Button variant="link">More Info</Button>
                     </Link>
-                    <button>Add to Favorite</button>
-
-                    {/* add event listener to button */}
                 </Card.Body>
             </Card>
         );
     }
 }
 
-MovieCard.propTypes = {
-    movie: PropTypes.shape({
-        Title: PropTypes.string.isRequired,
-        Description: PropTypes.string.isRequired,
-        Genre: PropTypes.shape({
-            Name: PropTypes.string.isRequired,
-            Description: PropTypes.string.isRequired
-        }),
-        Director: PropTypes.shape({
-            Name: PropTypes.string.isRequired,
-            Bio: PropTypes.string.isRequired
-        }),
-        ImagePath: PropTypes.string
-    }).isRequired,
-    onMovieClick: PropTypes.func.isRequired
-};
+
+
+// MovieCard.propTypes = {
+//     movie: PropTypes.shape({
+//         Title: PropTypes.string.isRequired,
+//         Description: PropTypes.string.isRequired,
+//         Genre: PropTypes.shape({
+//             Name: PropTypes.string.isRequired,
+//             Description: PropTypes.string.isRequired
+//         }),
+//         Director: PropTypes.shape({
+//             Name: PropTypes.string.isRequired,
+//             Bio: PropTypes.string.isRequired
+//         }),
+//         ImagePath: PropTypes.string
+//     }).isRequired,
+//     onMovieClick: PropTypes.func.isRequired
+// };

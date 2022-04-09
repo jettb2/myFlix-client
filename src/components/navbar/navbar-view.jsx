@@ -24,7 +24,7 @@ export function NavbarView({ user }) {
     return (
         <Navbar className="main-nav" sticky="top" expand="lg" variant="dark">
             <Container fluid>
-                <Navbar.Brand className="navbar-logo" href="/">My Flix</Navbar.Brand>
+                <Navbar.Brand className="navbar-logo" href="/">Home</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ml-auto">
