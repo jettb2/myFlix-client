@@ -40062,6 +40062,7 @@ class MovieView extends _reactDefault.default.Component {
         const Username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
         _axiosDefault.default.post(`https://jett-flix-2.herokuapp.com/users/${Username}/movies/${movie._id}`, {
+        }, {
             headers: {
                 Authorization: `Bearer ${token}`
             },
