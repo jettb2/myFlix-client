@@ -160,11 +160,13 @@ export class ProfileView extends React.Component {
 
     render() {
         const { movies, onBackClick } = this.props;
-        const { FavoriteMovies, Username, Email, Birthday } = this.state;
+        const { FavoriteMovies, Username, Email, Birthday, Password } = this.state;
 
         if (!Username) {
             return null;
         }
+        console.log(movies);
+        console.log(this.props)
 
         return (
             <Container className="profile-view" align="center">
@@ -203,7 +205,7 @@ export class ProfileView extends React.Component {
                                             type="password"
                                             name="Password"
                                             placeholder="New Password"
-                                            value={""}
+                                            value={Password}
                                             onChange={(e) => this.setPassword(e.target.value)}
                                             required
                                         />
@@ -262,7 +264,7 @@ export class ProfileView extends React.Component {
                                                     <Card.Img
                                                         className="fav-poster"
                                                         variant="top"
-                                                        src={movie.ImagePath}
+                                                        src={movies.ImagePath}
                                                     />
                                                     <Card.Body style={{ backgroundColor: "black" }}>
                                                         <Card.Title className="movie_title">
